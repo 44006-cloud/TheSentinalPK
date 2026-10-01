@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Daily Journal — Independent News, World, Pakistan, Business & Opinion</title>
+  <meta name="description" content="The Daily Journal: Authoritative coverage of Pakistan, international affairs, economics, technology, sports, culture, and fearless editorial opinions." />
+  <meta name="keywords" content="Pakistan news, world news, business, economy, technology, sports, cricket, opinion, editorial, Daily Journal, Express Tribune" />
+  <meta property="og:title" content="The Daily Journal — The Voice of Independent Journalism" />
+  <meta property="og:description" content="Authoritative coverage of national and international affairs, markets, technology, and culture." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts: Merriweather, Playfair Display & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Newspaper Master Stylesheet -->
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+
+  <!-- ======================================================================
+       1. TOP UTILITY BAR
+       ====================================================================== -->
+  <header class="utility-bar">
+    <div class="container utility-inner">
+      
+      <div class="utility-left">
+        <span class="utility-date" id="utility-date">Friday, October 2, 2026</span>
+        <span style="color: var(--border-medium);">|</span>
+        <span class="utility-weather" id="utility-weather">
+          <span>☀️</span> Islamabad 24°C
+        </span>
+        <span style="color: var(--border-medium);">|</span>
+        <div class="utility-edition">
+          <span>Edition:</span>
+          <span class="active">Pakistan</span>
+          <span>/</span>
+          <a href="#category/world" style="color: var(--text-muted);">Global</a>
+        </div>
+      </div>
+
+      <div class="utility-right">
+        <ul class="utility-links">
+          <li><a href="#category/pakistan">E-Paper</a></li>
+          <li><a href="#category/technology">Videos</a></li>
+          <li><a href="#category/opinion">Opinion</a></li>
+          <li><a href="#footer-section">Contact</a></li>
+        </ul>
+
+        <div class="utility-actions">
+          <button type="button" class="search-trigger-btn" id="search-trigger-btn" aria-label="Search articles">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+              <circle cx="11" cy="11" r="8"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span>Search</span>
+            <kbd>/</kbd>
+          </button>
+        </div>
+
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       2. NEWSPAPER MASTHEAD
+       ====================================================================== -->
+  <div class="site-masthead">
+    <div class="container masthead-inner">
+      <h1 class="masthead-brand">
+        <a href="#">THE DAILY JOURNAL</a>
+      </h1>
+      <div class="masthead-meta">
+        <span>The Voice of Independent Journalism</span>
+        <span>Established 1947</span>
+        <span>Pakistan & International Broadsheet</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Traditional Broadside Double Rule -->
+  <div class="container">
+    <div class="rule-double"></div>
+  </div>
+
+  <!-- ======================================================================
+       3. MAIN HORIZONTAL NAVIGATION
+       ====================================================================== -->
+  <nav class="main-nav-bar" id="main-navigation" aria-label="Main Editorial Sections">
+    <div class="container main-nav-inner">
+      
+      <button type="button" class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Open navigation menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <span>Sections</span>
+      </button>
+
+      <!-- Desktop Nav Category Links -->
+      <ul class="nav-category-list" id="nav-category-list">
+        <!-- Rendered dynamically from newsData.js -->
+      </ul>
+
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <a href="#category/opinion" style="font-size: 0.75rem; font-weight: 800; text-transform: uppercase; color: var(--accent-red); letter-spacing: 0.05em;">
+          ★ Editorials
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ======================================================================
+       4. BREAKING NEWS TICKER
+       ====================================================================== -->
+  <div class="breaking-ticker" id="breaking-news-ticker" role="region" aria-label="Breaking News">
+    <div class="container ticker-inner">
+      
+      <span class="ticker-badge" id="ticker-badge">
+        <span class="ticker-pulse"></span>
+        Breaking News
+      </span>
+
+      <div class="ticker-content">
+        <span class="ticker-headline" id="ticker-headline">Loading latest bulletins...</span>
+        <span class="ticker-time" id="ticker-time">Just now</span>
+      </div>
+
+      <div class="ticker-controls">
+        <button type="button" class="ticker-btn" id="ticker-prev" aria-label="Previous alert">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button type="button" class="ticker-btn" id="ticker-next" aria-label="Next alert">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       5. FINANCIAL MARKETS SNAPSHOT
+       ====================================================================== -->
+  <div class="markets-bar">
+    <div class="container markets-inner">
+      <span class="markets-label">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline>
+          <polyline points="17 6 23 6 23 12"></polyline>
+        </svg>
+        Markets:
+      </span>
+      <div id="market-tickers-container" style="display: flex; gap: 1.5rem;">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MAIN CONTENT CONTAINER (SPA VIEWS)
+       ====================================================================== -->
+  <main class="container" id="main-content-area">
+    
+    <!-- 1. HOMEPAGE VIEW -->
+    <div id="home-view-container">
+      <!-- Injected dynamically by app.js -->
+    </div>
+
+    <!-- 2. CATEGORY VIEW -->
+    <div id="category-view-container" style="display: none;">
+      <!-- Injected dynamically by app.js -->
+    </div>
+
+    <!-- 3. ARTICLE DETAIL VIEW -->
+    <div id="article-view-container" style="display: none;">
+      <!-- Injected dynamically by app.js -->
+    </div>
+
+  </main>
+
+  <!-- ======================================================================
+       FOOTER
+       ====================================================================== -->
+  <footer class="site-footer" id="footer-section">
+    <div class="container">
+      
+      <!-- Top Row: Brand & Category Columns -->
+      <div class="footer-top-row">
+        
+        <div class="footer-brand-col">
+          <div class="footer-masthead">THE DAILY JOURNAL</div>
+          <p class="footer-description">
+            Committed to independent, fact-checked reporting, rigorous investigations, and reasoned editorial commentary on Pakistan and global affairs.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="X (Twitter)">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+              </svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Navigation Columns -->
+        <div class="footer-nav-columns">
+          
+          <div class="footer-nav-group">
+            <h4>News Sections</h4>
+            <ul class="footer-links-list">
+              <li><a href="#category/pakistan">Pakistan National</a></li>
+              <li><a href="#category/world">World & Diplomacy</a></li>
+              <li><a href="#category/business">Business & Markets</a></li>
+              <li><a href="#category/technology">Tech & Innovation</a></li>
+              <li><a href="#category/sports">Sports & Cricket</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-nav-group">
+            <h4>Opinion</h4>
+            <ul class="footer-links-list">
+              <li><a href="#category/opinion">Today's Editorials</a></li>
+              <li><a href="#category/opinion">Columnists & Essays</a></li>
+              <li><a href="#category/opinion">Letters to the Editor</a></li>
+              <li><a href="#category/opinion">Guest Contributors</a></li>
+              <li><a href="#category/opinion">Archived Analysis</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-nav-group">
+            <h4>Life & Arts</h4>
+            <ul class="footer-links-list">
+              <li><a href="#category/entertainment">Entertainment & Film</a></li>
+              <li><a href="#category/lifestyle">Life & Style</a></li>
+              <li><a href="#category/entertainment">Culture & Heritage</a></li>
+              <li><a href="#category/technology">Science & Climate</a></li>
+              <li><a href="#category/lifestyle">Travel & Ecotourism</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-nav-group">
+            <h4>About Publication</h4>
+            <ul class="footer-links-list">
+              <li><a href="#home">About The Journal</a></li>
+              <li><a href="#home">Code of Ethics</a></li>
+              <li><a href="#home">Editorial Board</a></li>
+              <li><a href="#home">Print Subscription</a></li>
+              <li><a href="#home">Careers & Fellowships</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Bottom Bar: Copyright & Legal -->
+      <div class="footer-bottom-bar">
+        <div>
+          &copy; 2026 The Daily Journal Publications. All rights reserved. 
+          Reproduction of news stories without written permission is strictly prohibited.
+        </div>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Ethics Code</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ======================================================================
+       INTERACTIVE SEARCH MODAL OVERLAY
+       ====================================================================== -->
+  <div class="modal-overlay" id="search-modal" role="dialog" aria-modal="true" aria-label="Search The Daily Journal">
+    <div class="search-modal-box">
+      
+      <div class="search-modal-header">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="color: var(--text-muted);">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input 
+          type="text" 
+          id="search-input" 
+          class="search-input-field" 
+          placeholder="Search news, topics, authors, or analysis..." 
+          autocomplete="off"
+        />
+        <button type="button" class="search-close-btn" id="search-close-btn" aria-label="Close search">
+          &times;
+        </button>
+      </div>
+
+      <div class="search-results-area" id="search-results">
+        <!-- Live search results injected by app.js -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ======================================================================
+       MOBILE NAVIGATION DRAWER
+       ====================================================================== -->
+  <div class="mobile-nav-drawer" id="mobile-nav-drawer">
+    <div class="mobile-drawer-content">
+      
+      <div class="mobile-drawer-header">
+        <span class="drawer-brand">THE DAILY JOURNAL</span>
+        <button type="button" class="drawer-close-btn" id="mobile-drawer-close" aria-label="Close menu">
+          &times;
+        </button>
+      </div>
+
+      <ul class="mobile-drawer-links" id="mobile-drawer-links">
+        <!-- Populated dynamically -->
+      </ul>
+
+      <div style="padding: 1.5rem; border-top: 1px solid var(--border-rule); margin-top: auto; font-size: 0.8rem; color: var(--text-muted);">
+        <p style="font-weight: 700; color: var(--text-main); margin-bottom: 0.35rem;">Daily Journal E-Paper</p>
+        <p>Access the digital print replica on all devices.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Application Logic Module -->
+  <script type="module" src="js/app.js"></script>
+
+</body>
+</html>

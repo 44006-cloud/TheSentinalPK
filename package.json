@@ -1,0 +1,20 @@
+{
+  "name": "daily-journal-newspaper",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Professional Online Newspaper Web Application inspired by The Express Tribune",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "newspaper",
+    "editorial",
+    "broadsheet",
+    "tribune",
+    "pakistan-news"
+  ],
+  "author": "The Daily Journal",
+  "license": "ISC"
+}
